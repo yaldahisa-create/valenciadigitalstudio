@@ -243,6 +243,12 @@ h3{
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
+  margin-bottom: 16px;
+}
+
+.hero-note{
+  color: var(--muted);
+  max-width: 580px;
 }
 
 .hero-image-wrap{
@@ -261,6 +267,7 @@ h3{
 
 .brand-statement,
 .services,
+.experience,
 .process,
 .portfolio,
 .about,
@@ -293,7 +300,8 @@ h3{
 
 .service-card,
 .process-step,
-.testimonial-card{
+.testimonial-card,
+.experience-card{
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
@@ -322,8 +330,52 @@ h3{
 .process-step p,
 .testimonial-card p,
 .about-copy p,
-.contact-copy p{
+.contact-copy p,
+.experience-copy p,
+.experience-card li{
   color: var(--muted);
+}
+
+/* Experience */
+
+.experience-grid{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.experience-list{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.experience-item{
+  background: rgba(197, 162, 91, 0.08);
+  border: 1px solid rgba(197, 162, 91, 0.18);
+  border-radius: 16px;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+}
+
+.experience-card h3{
+  margin-bottom: 18px;
+}
+
+.experience-card ul{
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.experience-card li{
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.experience-card li:last-child{
+  border-bottom: none;
 }
 
 /* Portfolio */
@@ -391,10 +443,9 @@ h3{
 }
 
 .testimonial-card h3{
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   color: var(--gold-deep);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
   font-family: "Inter", sans-serif;
   margin-top: 16px;
   margin-bottom: 0;
@@ -496,6 +547,7 @@ h3{
 
 @media (max-width: 1100px){
   .hero-grid,
+  .experience-grid,
   .about-grid,
   .contact-grid{
     grid-template-columns: 1fr;
@@ -531,6 +583,10 @@ h3{
     width: 100%;
     justify-content: flex-start;
   }
+
+  .experience-list{
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 700px){
@@ -564,6 +620,7 @@ h3{
   .hero,
   .brand-statement,
   .services,
+  .experience,
   .process,
   .portfolio,
   .about,
@@ -582,7 +639,8 @@ h3{
   }
 
   .services-grid,
-  .process-grid{
+  .process-grid,
+  .experience-list{
     grid-template-columns: 1fr;
   }
 
