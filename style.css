@@ -70,7 +70,7 @@ a{
   background: linear-gradient(to right, transparent, var(--gold), transparent);
 }
 
-/* Header */
+/* HEADER */
 
 .site-header{
   position: sticky;
@@ -127,7 +127,7 @@ a{
   flex-shrink: 0;
 }
 
-/* Typography */
+/* TYPOGRAPHY */
 
 .eyebrow{
   color: var(--gold-deep);
@@ -176,7 +176,7 @@ h3{
   margin: 0 auto;
 }
 
-/* Buttons */
+/* BUTTONS */
 
 .btn{
   display: inline-flex;
@@ -217,7 +217,7 @@ h3{
   transform: translateY(-2px);
 }
 
-/* Hero */
+/* HERO */
 
 .hero{
   padding: 90px 0 110px;
@@ -264,57 +264,47 @@ h3{
   object-fit: cover;
 }
 
-/* Sections */
+/* GENERAL SECTION SPACING */
 
 .brand-statement,
 .services,
 .packages,
-.experience,
-.package-details,
-.process,
+.team-section,
 .portfolio,
-.about,
+.experience,
 .testimonials,
 .instagram,
-.cta,
 .contact{
   padding: 110px 0;
 }
 
-/* Grid sections */
+/* SERVICE / PACKAGE / TESTIMONIAL GRIDS */
 
-.services-grid,
-.process-grid,
-.testimonials-grid,
-.packages-grid{
+.service-grid,
+.packages-grid,
+.testimonials-grid{
   display: grid;
   gap: 22px;
 }
 
-.services-grid{
+.service-grid{
   grid-template-columns: repeat(3, 1fr);
 }
 
-.process-grid{
-  grid-template-columns: repeat(4, 1fr);
+.packages-grid{
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .testimonials-grid{
   grid-template-columns: repeat(3, 1fr);
 }
 
-.packages-grid{
-  grid-template-columns: repeat(3, 1fr);
-}
-
-/* Cards */
+/* CARDS */
 
 .service-card,
-.process-step,
-.testimonial-card,
-.experience-card,
 .package-card,
-.detail-block{
+.testimonial-card,
+.experience-card{
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
@@ -322,8 +312,7 @@ h3{
   box-shadow: var(--shadow);
 }
 
-.service-number,
-.step-index{
+.service-number{
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -340,19 +329,24 @@ h3{
 }
 
 .service-card p,
-.process-step p,
-.testimonial-card p,
-.about-copy p,
-.contact-copy p,
-.experience-copy p,
-.experience-card li,
 .package-card p,
-.detail-block p,
-.detail-block li{
+.testimonial-card p,
+.experience-copy p,
+.contact-copy p{
   color: var(--muted);
 }
 
-/* Packages */
+.service-card .btn,
+.package-card .btn{
+  margin-top: 8px;
+}
+
+.featured-package{
+  border: 1px solid rgba(197, 162, 91, 0.45);
+  transform: translateY(-6px);
+}
+
+/* PACKAGES */
 
 .package-label{
   color: var(--gold-deep);
@@ -368,77 +362,45 @@ h3{
   margin-bottom: 14px;
 }
 
-.package-card p{
-  margin-bottom: 18px;
+/* TEAM SECTION */
+
+.team-section{
+  text-align: center;
 }
 
-.featured-package{
-  border: 1px solid rgba(197, 162, 91, 0.45);
-  transform: translateY(-6px);
+.team-image-wrap{
+  max-width: 950px;
+  margin: 0 auto 28px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--card);
 }
 
-.detail-block{
-  margin-bottom: 28px;
-  padding: 36px 30px;
+.team-image-wrap img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
 }
 
-.detail-block ul{
-  margin: 22px 0 26px 18px;
-}
-
-.detail-block li{
-  margin-bottom: 10px;
-}
-
-.detail-price{
-  color: var(--gold-deep);
-  font-weight: 600;
-  margin-bottom: 22px;
-}
-
-/* Experience */
-
-.experience-grid{
+.team-role-grid{
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 28px;
-  align-items: start;
-}
-
-.experience-list{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 14px;
-  margin-top: 24px;
+  margin-top: 10px;
 }
 
-.experience-item{
-  background: rgba(197, 162, 91, 0.08);
-  border: 1px solid rgba(197, 162, 91, 0.18);
-  border-radius: 16px;
+.team-role{
   padding: 14px 16px;
-  font-size: 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--muted);
+  font-size: 0.88rem;
 }
 
-.experience-card h3{
-  margin-bottom: 18px;
-}
-
-.experience-card ul{
-  list-style: none;
-  margin-bottom: 24px;
-}
-
-.experience-card li{
-  padding: 10px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.experience-card li:last-child{
-  border-bottom: none;
-}
-
-/* Portfolio */
+/* PORTFOLIO */
 
 .portfolio-grid{
   display: grid;
@@ -454,8 +416,7 @@ h3{
   box-shadow: var(--shadow);
 }
 
-.portfolio-item img,
-.portfolio-item video{
+.portfolio-item img{
   height: 320px;
   object-fit: cover;
 }
@@ -469,32 +430,35 @@ h3{
   font-size: 0.96rem;
 }
 
-/* About */
+/* EXPERIENCE */
 
-.about-grid{
+.experience-grid{
   display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 42px;
-  align-items: center;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: start;
 }
 
-.about-image-wrap{
-  background: var(--card);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow);
+.experience-card h3{
+  margin-bottom: 18px;
 }
 
-.about-image{
-  min-height: 560px;
-  object-fit: cover;
+.experience-card ul{
+  list-style: none;
+  margin-bottom: 24px;
 }
 
-.about-signature{
-  margin-top: 12px;
+.experience-card li{
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
 }
 
-/* Testimonials */
+.experience-card li:last-child{
+  border-bottom: none;
+}
+
+/* TESTIMONIALS */
 
 .stars{
   color: var(--gold-deep);
@@ -547,7 +511,7 @@ h3{
   margin-top: 15px;
 }
 
-/* Instagram */
+/* INSTAGRAM */
 
 .instagram{
   text-align: center;
@@ -572,13 +536,7 @@ h3{
   margin-top: 30px;
 }
 
-/* CTA */
-
-.cta{
-  background: var(--bg-soft);
-}
-
-/* Contact */
+/* CONTACT */
 
 .contact-grid{
   display: grid;
@@ -621,7 +579,7 @@ h3{
   border-color: var(--gold-deep);
 }
 
-/* Footer */
+/* FOOTER */
 
 .site-footer{
   border-top: 1px solid var(--line);
@@ -670,22 +628,17 @@ h3{
   font-weight: 500;
 }
 
-/* Responsive */
+/* RESPONSIVE */
 
 @media (max-width: 1100px){
   .hero-grid,
   .experience-grid,
-  .about-grid,
   .contact-grid{
     grid-template-columns: 1fr;
   }
 
-  .services-grid,
+  .service-grid,
   .packages-grid{
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .process-grid{
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -695,6 +648,10 @@ h3{
   }
 
   .instagram-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-role-grid{
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -714,10 +671,6 @@ h3{
   .main-nav ul{
     width: 100%;
     justify-content: flex-start;
-  }
-
-  .experience-list{
-    grid-template-columns: 1fr 1fr;
   }
 
   .featured-package{
@@ -757,27 +710,22 @@ h3{
   .brand-statement,
   .services,
   .packages,
-  .experience,
-  .package-details,
-  .process,
+  .team-section,
   .portfolio,
-  .about,
+  .experience,
   .testimonials,
   .instagram,
-  .cta,
   .contact{
     padding: 80px 0;
   }
 
-  .hero-image,
-  .about-image{
+  .hero-image{
     min-height: 360px;
   }
 
-  .services-grid,
+  .service-grid,
   .packages-grid,
-  .process-grid,
-  .experience-list,
+  .team-role-grid,
   .instagram-grid{
     grid-template-columns: 1fr;
   }
@@ -805,8 +753,7 @@ h3{
     justify-content: center;
   }
 
-  .portfolio-item img,
-  .portfolio-item video{
+  .portfolio-item img{
     height: 260px;
   }
 }
